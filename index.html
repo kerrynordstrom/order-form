@@ -13,11 +13,11 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
+            <li><a href="#">Cart</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Catalog</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Home</a></li>
           </ul>
         </nav>
       </header>
@@ -70,7 +70,7 @@
         <li><img src="img/scissors.jpg" alt="Scissors Image"></li>
         <li><img src="img/shark.jpg" alt="Shark Image"></li>
         <li><img src="img/sweep.png" alt="Sweep Image"></li>
-        <li><img src="img/tauntaun" alt="Taun Taun Image"></li>
+        <li><img src="img/tauntaun.jpg" alt="Taun Taun Image"></li>
         <li><img src="img/unicorn.jpg" alt="Unicorn Image"></li>
         <li><img src="img/usb.gif" alt="USB Image"></li>
         <li><img src="img/water-can.jpg" alt="Water Can Image"></li>
@@ -82,33 +82,21 @@
   <form id= "customerRegistration" class="" action="index.html" method="post">
     <fieldset>
       <legend>Please enter your information below</legend>
-      <label for="firstName">First Name: </label>
-      <input type="text" name="firstName" value="">
-      <label for="lastName">Last Name: </label>
-      <input type="text" name="lastName" value="">
-      <label for="streetAddress">Street Address: </label>
-      <input type="text" name="streetAddress" value="">
-      <label for="city">City: </label>
-      <input type="text" name="city" value="">
-      <label for="zipCode">Zip Code: </label>
-      <input type="number" name="zipCode" value="">
-      <label for="country">Country: </label>
-      <input type="text" name="country" value="">
-      <label for="homeNumber">Home Phone Number: </label>
-      <input type="number" name="homeNumber" value="">
-      <label for="workNumber">Work Phone Number: </label>
-      <input type="number" name="workNumber" value="">
-    </fieldset>
-
-    <fieldset>
-      <label for="ccNumber">Credit Card Number: </label>
-      <input type="number" name="ccNum" value="">
-      <label for="expiration">Expiration Date: </label>
-      <input type="number" name="expiry" value="">
-      <label for="cvc">CVC (on back): </label>
-      <input type="number" name="cvc" value="">
-      <label for="billingZip">Billing Zip Code: </label>
-      <input type="number" name="billingZip" value="">
+      <input type="text" name="firstName" value="" placeholder="First Name">
+      <input type="text" name="lastName" value="" placeholder="Last Name">
+      <input type="text" name="streetAddress" value="" placeholder="Street Address">
+      <input type="text" name="city" value="" placeholder="City">
+      <input type="text" name="state" value="" placeholder="State">
+      <input type="number" name="zipcode" value="" placeholder="Zip Code">
+      <input type="text" name="country" value="" placeholder="Country">
+      <input type="number" name="homeNumber" value="" placeholder="Home Phone Number">
+      <input type="number" name="workNumber" value="" placeholder="Work Phone Number">
+      <input type="text" name="eMailAddress" value="" placeholder="E-mail address">
+      <input type="number" name="ccNum" value="" placeholder="CC #">
+      <input type="number" name="expiry" value="" placeholder="MMYY">
+      <input type="number" name="cvc" value="" placeholder="CVC">
+      <input type="number" name="billingZip" value="" placeholder="Billing Zip Code">
+      <button id="addCustomer" href="html/cart.html" type="submit" name="button">Submit</button>
     </fieldset>
   </form>
 
@@ -122,5 +110,6 @@
       <li><a href="#">Privacy</a></li>
     </ul>
   </footer>
+  <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
