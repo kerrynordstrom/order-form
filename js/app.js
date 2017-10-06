@@ -23,8 +23,8 @@ function Customer(firstName, lastName, streetAddress, city, state, zipcode, coun
   Customer.allCustomers.push(this);
 };
 
-
 function handleNewCustomerBilling(e) {
+
   e.preventDefault();
 
   console.log('test');
@@ -47,8 +47,9 @@ function handleNewCustomerBilling(e) {
   new Customer(firstName, lastName, streetAddress, city, state, zipcode, country, homeNumber, workNumber, eMailAddress, ccNum, expiry, cvc, billingZip);
 
   if (firstName == null || lastName == null || streetAddress == null || city == null || state == null || zipcode == null || eMailAddress == null || ccNum == null || expiry == null || cvc == null || billingZip == null) {
-    
+
     Customer.addCustomer.removeEventListener('submit', handleNewCustomerBilling);
+
     localStorage.allCustomers = JSON.stringify(Customer.allCustomers);
     console.log(Customer.allCustomers);
 
