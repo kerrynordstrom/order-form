@@ -1,7 +1,7 @@
 Customer.allCustomers = [];
 
 
-Customer.addCustomer = document.getElementById('addCustomer');
+Customer.addCustomer = document.getElementById('customerRegistration');
 
 //Customer Constructor function
 function Customer(firstName, lastName, streetAddress, city, state, zipcode, country, homeNumber, workNumber, eMailAddress, ccNum, expiry, cvc, billingZip)
@@ -23,9 +23,12 @@ function Customer(firstName, lastName, streetAddress, city, state, zipcode, coun
   Customer.allCustomers.push(this);
 };
 
+
 function handleNewCustomerBilling(e) {
-  e.preDefault();
+  e.preventDefault();
+
   console.log('test');
+
   var firstName = e.target.firstName.value;
   var lastName = e.target.lastName.value;
   var streetAddress = e.target.streetAddress.value;
@@ -43,6 +46,16 @@ function handleNewCustomerBilling(e) {
 
   new Customer(firstName, lastName, streetAddress, city, state, zipcode, country, homeNumber, workNumber, eMailAddress, ccNum, expiry, cvc, billingZip);
 
+  if (firstName == null || lastName == null || streetAddress == null || city == null || state == null || zipcode == null || eMailAddress == null || ccNum == null || expiry == null || cvc == null || billingZip == null) {
+    
+    Customer.addCustomer.removeEventListener('submit', handleNewCustomerBilling);
+    localStorage.allCustomers = JSON.stringify(Customer.allCustomers);
+    console.log(Customer.allCustomers);
+
+  } else {
+    alert('Please complete the customer information form!');
+  };
+
   e.target.firstName.value = null;
   e.target.lastName.value = null;
   e.target.streetAddress.value = null;
@@ -59,4 +72,5 @@ function handleNewCustomerBilling(e) {
 
 }
 
-addCustomer.addEventListener('submit', handleNewCustomerBilling);
+
+Customer.addCustomer.addEventListener('submit', handleNewCustomerBilling);
