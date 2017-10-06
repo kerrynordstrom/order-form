@@ -4,7 +4,7 @@ Customer.allCustomers = [];
 Customer.addCustomer = document.getElementById('customerRegistration');
 
 //Customer Constructor function
-function Customer(firstName, lastName, streetAddress, city, state, zipcode, country, homeNumber, workNumber, eMailAddress, ccNum, expiry, cvc, billingZip)
+function Customer(firstName, lastName, streetAddress, city, state, zipcode, country, homeNumber, workNumber, eMailAddress, ccNum, expiry, cvc, billingZip, item, quantity)
 {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -20,6 +20,8 @@ function Customer(firstName, lastName, streetAddress, city, state, zipcode, coun
   this.expiry = expiry;
   this.cvc = cvc;
   this.billingZip = billingZip;
+  this.item = item;
+  this.quantity = quantity;
   Customer.allCustomers.push(this);
 };
 
@@ -43,6 +45,8 @@ function handleNewCustomerBilling(e) {
   var expiry = parseInt(e.target.expiry.value);
   var cvc = parseInt(e.target.cvc.value);
   var billingZip = parseInt(e.target.billingZip.value);
+  // var item = e.target.item.value;
+  // var quantity = parseInt(e.target.quantity.value);
 
   new Customer(firstName, lastName, streetAddress, city, state, zipcode, country, homeNumber, workNumber, eMailAddress, ccNum, expiry, cvc, billingZip);
 
@@ -52,9 +56,9 @@ function handleNewCustomerBilling(e) {
 
     localStorage.allCustomers = JSON.stringify(Customer.allCustomers);
     console.log(Customer.allCustomers);
-
-  } else {
-    alert('Please complete the customer information form!');
+  //
+  // } else {
+  //   alert('Please complete the customer information form!');
   };
 
   e.target.firstName.value = null;
