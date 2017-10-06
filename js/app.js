@@ -50,15 +50,15 @@ function handleNewCustomerBilling(e) {
 
   new Customer(firstName, lastName, streetAddress, city, state, zipcode, country, homeNumber, workNumber, eMailAddress, ccNum, expiry, cvc, billingZip);
 
-  if (firstName == null || lastName == null || streetAddress == null || city == null || state == null || zipcode == null || eMailAddress == null || ccNum == null || expiry == null || cvc == null || billingZip == null) {
+  if (firstName !== null || lastName !== null || streetAddress !== null || city !== null || state !== null || zipcode !== null || eMailAddress !== null || ccNum !== null || expiry !== null || cvc !== null || billingZip !== null) {
 
     Customer.addCustomer.removeEventListener('submit', handleNewCustomerBilling);
 
     localStorage.allCustomers = JSON.stringify(Customer.allCustomers);
     console.log(Customer.allCustomers);
-  //
-  // } else {
-  //   alert('Please complete the customer information form!');
+  
+  } else {
+    alert('Please complete the customer information form!');
   };
 
   e.target.firstName.value = null;
